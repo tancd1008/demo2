@@ -1,8 +1,9 @@
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import ClientLayout from "./components/layouts/client/client.js";
-import { publicRoutes } from "./routers";
+import AuthLayout from "./components/layouts/auth/AuthLayout";
+import ClientLayout from "./components/layouts/client/ClientLayout.js";
+import { authenticationRoutes, publicRoutes } from "./routers";
 
 // import { ref, child, get } from "firebase/database";
 // import database from './firebase-config';
@@ -27,7 +28,12 @@ function App() {
               const Page = route.component;
               return <Route key={index} path={route.path} element={<Page />} />;
             })}
-           
+          </Route>
+          <Route path="auth" element={<AuthLayout />}>
+            {authenticationRoutes.map((route, index) => {
+              const Page = route.component;
+              return <Route key={index} path={route.path} element={<Page />} />;
+            })}
           </Route>
         </Routes>
       </main>

@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.input:focus ~.label{
+  transform: translateX(0rem) translateY(-1rem) !important;
+}
