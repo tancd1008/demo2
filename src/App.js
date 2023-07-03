@@ -1,9 +1,8 @@
-import "./App.css";
-import { Route, Routes } from "react-router-dom";
-import { publicRoutes } from "./routers";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import Home from "./pages/client/Home";
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
 import ClientLayout from "./components/layouts/client/client.js";
+import { publicRoutes } from "./routers";
 
 // import { ref, child, get } from "firebase/database";
 // import database from './firebase-config';
