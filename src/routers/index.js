@@ -4,11 +4,11 @@ import Home from "../pages/client/Home";
 
 const publicRoutes = [
     {
-        path: '/',
+        path: '',
         component: Home,
     },
     {
-        path: '/login',
+        path: 'login',
         component: Login
     }
 ];
