@@ -21,22 +21,20 @@ function App() {
 
   return (
     <div className="App">
-      <main>
-        <Routes>
-          <Route path="/" element={<ClientLayout />}>
-            {publicRoutes.map((route, index) => {
-              const Page = route.component;
-              return <Route key={index} path={route.path} element={<Page />} />;
-            })}
-          </Route>
-          <Route path="auth" element={<AuthLayout />}>
-            {authenticationRoutes.map((route, index) => {
-              const Page = route.component;
-              return <Route key={index} path={route.path} element={<Page />} />;
-            })}
-          </Route>
-        </Routes>
-      </main>
+      <Routes>
+        <Route path="/" element={<ClientLayout />}>
+          {publicRoutes.map((route, index) => {
+            const Page = route.component;
+            return <Route key={index} path={route.path} element={<Page />} />;
+          })}
+        </Route>
+        <Route path="auth" element={<AuthLayout />}>
+          {authenticationRoutes.map((route, index) => {
+            const Page = route.component;
+            return <Route key={index} path={route.path} element={<Page />} />;
+          })}
+        </Route>
+      </Routes>
     </div>
   );
 }

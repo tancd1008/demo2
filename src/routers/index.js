@@ -1,5 +1,5 @@
-import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
+import Login from "../pages/auth/login";
 import Home from "../pages/client/Home";
 
 const publicRoutes = [
