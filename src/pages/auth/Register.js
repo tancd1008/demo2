@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ConstantStrings from "../../constants/ConstantStrings";
+import { signinWithGoogle } from "../../servers/auth/auth";
 import "./auth.style.css";
 
 const Register = () => {
@@ -29,7 +30,7 @@ const Register = () => {
     const regexPhone = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
     const regexEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]$/;
     var check = false;
-    const checkArr = Object.keys(formValue)
+    const checkArr = Object.keys(formValue);
     const keyErrorArr = Object.keys(error);
     var objError = { ...error };
     for (let index = 0; index < checkArr.length; index++) {
@@ -50,8 +51,8 @@ const Register = () => {
       setError({ ...error, email: "Sai dinh dang email" });
     } else if (regexPhone.test(formValue.phone) === false) {
       setError({ ...error, phone: "SDT khong hop le" });
-    }else{
-      console.log("ok")
+    } else {
+      console.log("ok");
     }
   };
   return (
@@ -74,7 +75,9 @@ const Register = () => {
                 className="block font-bold transition ease-in-out rounded-t-lg pb-0 pt-5 w-full text-xl text-gray-900  border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer"
                 placeholder=" "
               />
-              <p className="text-md text-red-500 text-left">{error?.fullName}</p>
+              <p className="text-md text-red-500 text-left">
+                {error?.fullName}
+              </p>
               <label
                 htmlFor="fullName"
                 className="absolute font-bold text-xl text-gray-500 dark:text-gray-400 transition ease-in-out duration-500 transform -translate-y-8 scale-75 top-4 z-10 origin-[0] left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8"
@@ -131,7 +134,9 @@ const Register = () => {
                 className="block font-bold transition ease-in-out rounded-t-lg pb-0 pt-5 w-full text-xl text-gray-900  border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-red-600 peer"
                 placeholder=" "
               />
-              <p className="text-md text-red-500 text-left">{error?.password}</p>
+              <p className="text-md text-red-500 text-left">
+                {error?.password}
+              </p>
               <label
                 htmlFor="password"
                 className="absolute font-bold text-xl text-gray-500 dark:text-gray-400 transition ease-in-out duration-500 transform -translate-y-8 scale-75 top-4 z-10 origin-[0] left-0 peer-focus:text-red-600 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8"
@@ -140,10 +145,36 @@ const Register = () => {
               </label>
             </div>
             <div className="w-full">
-              <button type="submit" onClick={handleSubmit} className="relative w-full shadow-none inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-medium text-gray-900 rounded-full group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 text-purple-500 hover:text-white dark:text-white  focus:outline-none">
+              <button
+                type="submit"
+                onClick={handleSubmit}
+                className="relative w-full shadow-none inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-medium text-gray-900 rounded-full group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 text-purple-500 hover:text-white dark:text-white  focus:outline-none"
+              >
                 <span className="relative w-full px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-full text-2xl uppercase  group-hover:bg-opacity-0 font-bold">
                   Đăng kí
                 </span>
+              </button>
+              <button
+              onClick={signinWithGoogle}
+                type="button"
+                className="text-white w-full bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2"
+              >
+                <svg
+                  className="w-4 h-4 mr-2 -ml-1"
+                  aria-hidden="true"
+                  focusable="false"
+                  data-prefix="fab"
+                  data-icon="google"
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 488 512"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"
+                  />
+                </svg>
+                Sign in with Google
               </button>
             </div>
           </div>

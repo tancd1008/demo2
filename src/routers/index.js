@@ -1,4 +1,4 @@
-import Login from "../pages/auth/Login";
+import LoginPage from "../pages/auth/LoginPage";
 import Register from "../pages/auth/Register";
 import Home from "../pages/client/Home";
 import Products from "../pages/client/Products";
@@ -14,7 +14,7 @@ const publicRoutes = [
 const authenticationRoutes = [
   {
     path: "login",
-    component: Login,
+    component: LoginPage,
   },
   {
     path: "register",
