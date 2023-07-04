@@ -2,5 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 .input:focus ~.label{
-  transform: translateX(0rem) translateY(-1rem) !important;
+  transform: translateX(0rem) translateY(-1.5rem) !important;
 }
+.form-outline label{
+  pointer-events: none;
+  position: absolute;
+  top: -1.5rem;
+  transition: all .5s ease-in-out;
+}
+h2:after {
+  display:block;
+  content: '';
+  position: relative;
+  top: -0.25rem;
+  border-bottom: solid 3px #019fb6;  
+  transform: scaleX(0);  
+  transition: transform 250ms ease-in-out;
+}
+h2:hover:after { transform: scaleX(1); }
