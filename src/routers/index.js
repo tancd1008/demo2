@@ -1,3 +1,4 @@
+import Cart from "../components/layouts/client/Cart";
 import LoginPage from "../pages/auth/LoginPage";
 import Register from "../pages/auth/Register";
 import Home from "../pages/client/Home";
@@ -10,6 +11,8 @@ const publicRoutes = [
   },
   { path: "products", 
     component: Products },
+    { path: "cart", 
+    component: Cart },
 ];
 const authenticationRoutes = [
   {
