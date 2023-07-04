@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ConstantStrings from "../../constants/ConstantStrings";
 
-const Login = () => {
+const LoginPage = () => {
   const [formValue, setFormValue] = useState({
     email: "",
     password: "",
@@ -111,4 +111,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginPage;
