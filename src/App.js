@@ -3,7 +3,8 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import AuthLayout from "./components/layouts/auth/AuthLayout";
 import ClientLayout from "./components/layouts/client/ClientLayout.js";
-import { authenticationRoutes, publicRoutes } from "./routers";
+import { authenticationRoutes, privateRoutes, publicRoutes } from "./routers";
+import AdminLayout from "./components/layouts/admin/AdminLayout";
 
 // import { ref, child, get } from "firebase/database";
 // import database from './firebase-config';
@@ -22,7 +23,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<ClientLayout />}>
+        <Route path="" element={<ClientLayout />}>
           {publicRoutes.map((route, index) => {
             const Page = route.component;
             return <Route key={index} path={route.path} element={<Page />} />;
@@ -30,6 +31,12 @@ function App() {
         </Route>
         <Route path="auth" element={<AuthLayout />}>
           {authenticationRoutes.map((route, index) => {
+            const Page = route.component;
+            return <Route key={index} path={route.path} element={<Page />} />;
+          })}
+        </Route>
+        <Route path="admin" element={<AdminLayout />}>
+          {privateRoutes.map((route, index) => {
             const Page = route.component;
             return <Route key={index} path={route.path} element={<Page />} />;
           })}

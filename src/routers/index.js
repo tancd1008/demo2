@@ -3,6 +3,7 @@ import LoginPage from "../pages/auth/LoginPage";
 import Register from "../pages/auth/Register";
 import Home from "../pages/client/Home";
 import Products from "../pages/client/Products";
+import Dashboard from "../pages/admin/Dashboard";
 
 const publicRoutes = [
   {
@@ -14,6 +15,13 @@ const publicRoutes = [
     { path: "cart", 
     component: Cart },
 ];
+const privateRoutes = [
+  {
+    path: "",
+    component: Dashboard,
+  },
+  
+];
 const authenticationRoutes = [
   {
     path: "login",
@@ -24,5 +32,4 @@ const authenticationRoutes = [
     component: Register,
   },
 ];
-const privateRoutes = [];
 export { authenticationRoutes, privateRoutes, publicRoutes };
