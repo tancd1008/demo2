@@ -7,8 +7,8 @@ const HeaderAdmin = () => {
          <aside className="py-6 px-10 w-60 border-r border-gray-300 min-h-full">
             {/* <img src="/img/logo.png" alt="" className="w-28" /> */}
             <h1 className=" text-amber-400 text-2xl font-bold ">ATPOST</h1>
-            <ul v-for="group in sidebar" className="flex flex-col gap-y-6 pt-20">
-              <li v-for="item in group">
+            <ul  className="flex flex-col gap-y-6 pt-20">
+              <li>
                 <Link
                   to="#"
                   className="flex gap-x-4 items-center py-2 text-gray-500 hover:text-indigo-600 group"
@@ -17,7 +17,7 @@ const HeaderAdmin = () => {
                   <span>Trang chủ</span>
                 </Link>
               </li>
-              <li v-for="item in group">
+              <li >
                 <Link
                   to="#"
                   className="flex gap-x-4 items-center py-2 text-gray-500 hover:text-indigo-600 group"
@@ -26,7 +26,7 @@ const HeaderAdmin = () => {
                   <span>Sản phẩm</span>
                 </Link>
               </li>
-              <li v-for="item in group">
+              <li >
                 <Link
                   to="#"
                   className="flex gap-x-4 items-center py-2 text-gray-500 hover:text-indigo-600 group"
@@ -35,7 +35,7 @@ const HeaderAdmin = () => {
                   <span>Hóa đơn</span>
                 </Link>
               </li>
-              <li v-for="item in group">
+              <li >
                 <Link
                   to="#"
                   className="flex gap-x-4 items-center py-2 text-gray-500 hover:text-indigo-600 group"

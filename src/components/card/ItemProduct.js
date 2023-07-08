@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ItemProduct = () => {
   const products = [
@@ -92,19 +93,19 @@ const ItemProduct = () => {
       price: "$35",
       color: "Black",
     },
-    // More products...
   ];
   return (
     <div className=" grid grid-cols-2 gap-4 ">
       {products.map((item) => (
-        <div key={item.id} className="group relative">
+        <Link key={item.id} className="group relative" to={`detail/${item.id}`}>
           <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-100">
             <img className="h-full w-full object-cover object-center lg:h-full lg:w-full " alt={item.imageAlt} src={item.imageSrc}/>
           </div>
           <div className="mt-4 flex justify-between">
             <span>{item.name}</span>
           </div>
-        </div>
+          
+        </Link>
       ))}
       
     </div>
