@@ -95,10 +95,10 @@ const ItemProduct = () => {
     // More products...
   ];
   return (
-    <div className=" grid grid-cols-4 gap-4 ">
+    <div className=" grid grid-cols-2 gap-4 ">
       {products.map((item) => (
         <div key={item.id} className="group relative">
-          <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:scale-110">
+          <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-100">
             <img className="h-full w-full object-cover object-center lg:h-full lg:w-full " alt={item.imageAlt} src={item.imageSrc}/>
           </div>
           <div className="mt-4 flex justify-between">
