@@ -1,31 +1,112 @@
 import React from "react";
 
 const ItemProduct = () => {
+  const products = [
+    {
+      id: 1,
+      name: "Basic Tee",
+      href: "#",
+      imageSrc:
+        "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+      imageAlt: "Front of men's Basic Tee in black.",
+      price: "$35",
+      color: "Black",
+    },
+    {
+      id: 2,
+      name: "Basic Tee",
+      href: "#",
+      imageSrc:
+        "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+      imageAlt: "Front of men's Basic Tee in black.",
+      price: "$35",
+      color: "Black",
+    },
+    {
+      id: 3,
+      name: "Basic Tee",
+      href: "#",
+      imageSrc:
+        "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+      imageAlt: "Front of men's Basic Tee in black.",
+      price: "$35",
+      color: "Black",
+    },
+    {
+      id: 4,
+      name: "Basic Tee",
+      href: "#",
+      imageSrc:
+        "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+      imageAlt: "Front of men's Basic Tee in black.",
+      price: "$35",
+      color: "Black",
+    },
+    {
+      id: 5,
+      name: "Basic Tee",
+      href: "#",
+      imageSrc:
+        "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+      imageAlt: "Front of men's Basic Tee in black.",
+      price: "$35",
+      color: "Black",
+    },
+    {
+      id: 6,
+      name: "Basic Tee",
+      href: "#",
+      imageSrc:
+        "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+      imageAlt: "Front of men's Basic Tee in black.",
+      price: "$35",
+      color: "Black",
+    },
+    {
+      id: 7,
+      name: "Basic Tee",
+      href: "#",
+      imageSrc:
+        "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+      imageAlt: "Front of men's Basic Tee in black.",
+      price: "$35",
+      color: "Black",
+    },
+    {
+      id: 8,
+      name: "Basic Tee",
+      href: "#",
+      imageSrc:
+        "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+      imageAlt: "Front of men's Basic Tee in black.",
+      price: "$35",
+      color: "Black",
+    },
+    {
+      id: 9,
+      name: "Basic Tee",
+      href: "#",
+      imageSrc:
+        "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+      imageAlt: "Front of men's Basic Tee in black.",
+      price: "$35",
+      color: "Black",
+    },
+    // More products...
+  ];
   return (
-    <div className="group relative">
-      <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:scale-110">
-        <img
-          className="h-full w-full object-cover object-center lg:h-full lg:w-full "
-          src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg"
-          alt=""
-        />
-      </div>
-      <div className="mt-4 flex justify-between">
-        <div>
-          <h3 className="text-sm text-gray-700">
-            <a href="/">
-              <span aria-hidden="true" className="absolute inset-0"></span>
-              Basic Tee
-            </a>
-          </h3>
-          <p className="mt-1 text-sm text-gray-500">Name</p>
+    <div className=" grid grid-cols-4 gap-4 ">
+      {products.map((item) => (
+        <div key={item.id} className="group relative">
+          <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:scale-110">
+            <img className="h-full w-full object-cover object-center lg:h-full lg:w-full " alt={item.imageAlt} src={item.imageSrc}/>
+          </div>
+          <div className="mt-4 flex justify-between">
+            <span>{item.name}</span>
+          </div>
         </div>
-        <p className="text-sm font-medium text-gray-900">$35</p>
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-         
-          <span>Đặt món <i className="fa-solid fa-cart-shopping"></i></span>
-        </button>
-      </div>
+      ))}
+      ;
     </div>
   );
 };
