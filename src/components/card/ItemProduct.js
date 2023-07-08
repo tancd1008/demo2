@@ -106,7 +106,7 @@ const ItemProduct = () => {
           </div>
         </div>
       ))}
-      ;
+      
     </div>
   );
 };
